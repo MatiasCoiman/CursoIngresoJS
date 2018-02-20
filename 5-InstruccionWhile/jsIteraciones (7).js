@@ -5,8 +5,17 @@ function Mostrar()
 	var acumulador=0;
 	var respuesta='si';
 
+	while(respuesta=="si")
+		{
+			contador++;
+			numero=prompt("Ingrese su Numero");
+			numero=parseInt(numero);
+			acumulador=acumulador+numero;
 
-document.getElementById('suma').value=acumulador;
-document.getElementById('promedio').value=acumulador/contador;
+			respuesta=prompt("ingrese si para continuar");
+		}
+
+	document.getElementById('suma').value=acumulador;
+	document.getElementById('promedio').value=acumulador/contador;
 
 }//FIN DE LA FUNCIÓN
