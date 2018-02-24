@@ -11,6 +11,9 @@ function Mostrar()
 	var sexoF=0;
 	var sexoM=0;
 	var desaprobados=0;
+	var nombreMejorNota;
+	var maximo=0;
+	var minimo=0;
 	while(respuesta!="no")
 		{
 				alumno=prompt("ingrese nombre de alumno");
@@ -47,12 +50,27 @@ function Mostrar()
 			{
 			desaprobados++;
 			desprobados=parseInt(desaprobados);
+			}
+		if(alumno==1)
+		{	
+			maximo=nota;
+			nombreMejorNota=alumno;	
+		}
+			else
+			{
+				if(nota>maximo)
+				{
+					maximo=nota;
+					nombreMejorNota=alumno;
+				}
+
 			}	
+				
 		}
 
 document.write("Se ingreso "+cantidad+" alumnos" + " y el promedio total es "+promedio);
 document.write("<br>" + "Hay "+sexoF+ " personas femeninas "+ " y " +sexoM + " personas masculinas");
 document.write("<br>" + "hay "+desaprobados+ " desaprobado");
-
+document.write("<br>" + " Nombre de la mejor nota "+ nombreMejorNota);
 
 }
