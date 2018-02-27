@@ -1,76 +1,57 @@
-//ingreso de alumnos, no sabemos cuantos alumnos hay, vamos a pedir el nombre , quiero saber cuantos alumnos ingrese
 function Mostrar()
 {
-	var alumno;
-	var cantidad=0;
-	var respuesta;
-	var nota;
+	var numero;
+	var numeroPositivo=0;
+	var cantidadNumeroPar=0;
 	var promedio;
+	var maximo=-9999;
+	var minimo=9999;
 	var acumulador=0;
-	var sexo;
-	var sexoF=0;
-	var sexoM=0;
-	var desaprobados=0;
-	var nombreMejorNota;
-	var maximo=0;
-	var minimo=0;
+	var respuesta="si";
+
 	while(respuesta!="no")
+	{
+		numeroPositivo++;
+		numero=prompt("ingrese un numero");
+		numero=parseInt(numero);
+		acumulador=acumulador+numero;
+
+		while(numero<0)
 		{
-				alumno=prompt("ingrese nombre de alumno");
-				cantidad=cantidad+1;
-				nota=prompt("ingrese la nota");
-				nota=parseInt(nota);
-		while(nota<0 || nota>10)
-				{
-				nota=prompt("ingrese la nota");
-				nota=parseInt(nota);	
-				}	
-				sexo=prompt("ingrese f ó m .");
-		while(!(sexo=="f" || sexo=="m"))
-				{
-					sexo = prompt("error,ingrese f ó m .");
-				}	
-				if(sexo=="f")
-				{	
-					sexoF++;
-			
-				}	
-				if(sexo=="m")
-				{	
-				sexoM++;
-		
-				}
-	
-			acumulador=acumulador+nota;
+			numero=prompt("Error, ingrese un numero");
+		}	
 
-			promedio=acumulador/cantidad;
-			respuesta=prompt("¿quieres ingresar otro alumno?");
+		respuesta=prompt("No, para salir");
 
-		if(sexo=="m" && nota<4)
+
+		if(numero%2==0)
+		{
+			cantidadNumeroPar++;
+		}
+		if(numero==1)
+		{
+			maximo=numero;
+			minimo=numero;
+		}
+		else
+		{
+			if(numero>maximo)
 			{
-			desaprobados++;
-			desprobados=parseInt(desaprobados);
+				maximo=numero;
 			}
-		if(alumno==1)
-		{	
-			maximo=nota;
-			nombreMejorNota=alumno;	
-		}
-			else
+			if(numero<minimo)
 			{
-				if(nota>maximo)
-				{
-					maximo=nota;
-					nombreMejorNota=alumno;
-				}
-
-			}	
-				
+				minimo=numero;
+			}
 		}
 
-document.write("Se ingreso "+cantidad+" alumnos" + " y el promedio total es "+promedio);
-document.write("<br>" + "Hay "+sexoF+ " personas femeninas "+ " y " +sexoM + " personas masculinas");
-document.write("<br>" + "hay "+desaprobados+ " desaprobado");
-document.write("<br>" + " Nombre de la mejor nota "+ nombreMejorNota);
+	promedio=acumulador/numeroPositivo;			
+	}
 
+
+	document.write("<br> "+"cantidadNumeroPar: "+cantidadNumeroPar);
+	document.write("<br> "+"Suma de numeros "+acumulador);
+	document.write("<br> "+"Promedio: "+promedio);
+	document.write("<br> "+"Maximo: "+maximo);
+	document.write("<br> "+"Minimo: "+minimo);
 }
