@@ -1,6 +1,6 @@
 //Debemos lograr mostrar un mensaje al presionar el botón  'MOSTRAR'.
 function Mostrar()
-{
+{	//error.
 	var numero=0;
 	var cantidadPares=0;
 	var promedioTotal;
