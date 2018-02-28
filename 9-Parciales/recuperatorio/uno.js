@@ -1,5 +1,6 @@
 
 function Mostrar()
+//error.
 {
 	var base;
 	var superficie;

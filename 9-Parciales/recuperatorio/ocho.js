@@ -1,5 +1,6 @@
 function Mostrar()
 {
+	//error.
 	var numero;
 	var promedio;
 	var numeroPar=0;

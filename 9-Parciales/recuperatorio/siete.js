@@ -1,4 +1,4 @@
-function Mostrar()
+function Mostrar()//error.
 {
 	var edad;
 	var sexo;
