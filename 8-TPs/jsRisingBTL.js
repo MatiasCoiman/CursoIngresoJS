@@ -9,5 +9,76 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
  */
 function ComenzarIngreso () 
 {
- 
+ 	var sexo;
+ 	var edad;
+ 	var sueldoBruto;
+ 	var estadoCivil;
+ 	var numeroLegajo;
+ 	var masculino;
+ 	var femenino;
+
+ 	
+
+ 	
+		edad=prompt("Ingrese edad.");
+ 		edad=parseInt(edad);
+ 		
+
+
+ 	while(!(edad>=18 && edad<=90 || isNaN(edad)))
+ 	{	
+ 		edad=prompt("Error,Ingrese edad valida.");
+ 		edad=parseInt(edad);
+ 		
+ 	}
+ 	sexo=prompt("Ingrese sexo.");
+ 	while(sexo!="f" && sexo!="m")
+ 	{
+ 		sexo=prompt("Error,Ingrese sexo valido.");
+ 	}
+ 		switch(sexo)
+ 		{
+ 			case "f":
+ 				sexo="femenino";
+ 				break
+ 			case "m":
+ 				sexo="masculino";
+ 				break;
+ 		}
+
+ 		estadoCivil=prompt("Ingrese estado civil, 1-soltero,2-casado,3-divorciados,4-viudo/a");
+
+ 		switch(estadoCivil)
+ 		{
+ 			case "1":
+ 				estadoCivil="Soltero";
+ 				break;
+ 			case "2":
+ 				estadoCivil="Casado";
+ 				break;
+ 			case "3":
+ 				estadoCivil="divorciado/a";
+ 				break;
+ 			case "4":
+ 				estadoCivil="Viudo/a";
+ 				break;
+
+ 		}
+ 		sueldoBruto=prompt("Ingrese sueldo bruto no menor a 8000");
+ 		sueldoBruto=parseInt(sueldoBruto);
+ 		while(sueldoBruto<8000)
+ 		{	
+ 			sueldoBruto=prompt("Error,ingrese sueldo bruto valido");
+ 			sueldoBruto=parseInt(sueldoBruto);
+ 		}
+ 		
+
+
+	
+
+ 	document.getElementById('Edad').value=edad;
+ 	document.getElementById('Sexo').value=sexo;
+ 	document.getElementById('EstadoCivil').value=estadoCivil;
+ 	document.getElementsByTagName("Sueldo").value=sueldoBruto;
+
 }
